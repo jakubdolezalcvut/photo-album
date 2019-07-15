@@ -76,6 +76,9 @@ class PhotoFragment : Fragment() {
                 justifyContent = JustifyContent.SPACE_AROUND
             }
         }
+        photoFloatingActionButton.setOnClickListener { _ ->
+
+        }
 
         photoViewModel = getViewModel { scope ->
             PhotoViewModel.create(scope)

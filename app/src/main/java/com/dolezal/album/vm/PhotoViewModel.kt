@@ -27,8 +27,11 @@ class PhotoViewModel @RestrictTo(RestrictTo.Scope.TESTS) constructor(
 
         photoDataSource.getPhotos(albumId).subscribeBy(
             onSuccess = { photoList ->
+                val sortedList = photoList.sortedBy { photo ->
+                    photo.title.length
+                }
                 _networkState.postValue(NetworkSuccess)
-                _photos.postValue(photoList)
+                _photos.postValue(sortedList)
             },
             onError = { throwable ->
                 _networkState.postValue(NetworkError(throwable))
