@@ -24,6 +24,11 @@ class PhotoAdapter : RecyclerView.Adapter<PhotoAdapter.PhotoViewHolder>() {
         return PhotoViewHolder(view)
     }
 
+    override fun onViewRecycled(holder: PhotoViewHolder) {
+        super.onViewRecycled(holder)
+        holder.unbind()
+    }
+
     override fun onBindViewHolder(holder: PhotoViewHolder, position: Int) {
         holder.bind(photos[position])
     }
@@ -35,6 +40,11 @@ class PhotoAdapter : RecyclerView.Adapter<PhotoAdapter.PhotoViewHolder>() {
     class PhotoViewHolder(
         override val containerView: View
     ) : RecyclerView.ViewHolder(containerView), LayoutContainer {
+
+        fun unbind() {
+            Glide.with(containerView)
+                .clear(photoImage)
+        }
 
         fun bind(photo: Photo) {
             photoTitle.text = photo.title
