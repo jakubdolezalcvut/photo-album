@@ -9,11 +9,11 @@ import android.view.ViewGroup
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
-import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.transition.Slide
 import com.dolezal.album.R
 import com.dolezal.album.data.Album
 import com.dolezal.album.vm.PhotoViewModel
+import com.google.android.flexbox.*
 import kotlinx.android.synthetic.main.fragment_photo.*
 
 class PhotoFragment : Fragment() {
@@ -69,7 +69,12 @@ class PhotoFragment : Fragment() {
         }
         photoRecyclerView.apply {
             adapter = photoAdapter
-            layoutManager = LinearLayoutManager(context)
+            layoutManager = FlexboxLayoutManager(context).apply {
+                alignItems = AlignItems.FLEX_START
+                flexDirection = FlexDirection.ROW
+                flexWrap = FlexWrap.WRAP
+                justifyContent = JustifyContent.SPACE_AROUND
+            }
         }
 
         photoViewModel = getViewModel { scope ->
