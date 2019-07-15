@@ -2,17 +2,17 @@
 <androidx.cardview.widget.CardView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    style="@style/DetailHolder"
+    style="@style/AlbumHolder"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginBottom="@dimen/album_margin_holder">
+    android:layout_marginBottom="@dimen/space_8">
 
     <TextView
         android:id="@+id/albumTitle"
         style="@style/AlbumTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/album_margin_holder"
+        android:padding="@dimen/space_24"
         tools:text="officia porro iure quia iusto qui ipsa ut modi" />
 
 </androidx.cardview.widget.CardView>

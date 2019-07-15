@@ -1,0 +1,11 @@
+<resources>
+
+    <string name="app_name">Photo Albums</string>
+
+    <string name="photo_page_title">Photos</string>
+    <string name="photo_description">A photo</string>
+
+    <string name="network_loading_message">Items are loading …</string>
+    <string name="network_empty_message">No items available. Enable data and swipe to refresh.</string>
+
+</resources>

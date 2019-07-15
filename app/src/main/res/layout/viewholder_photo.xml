@@ -5,14 +5,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:background="@drawable/viewholder_ripple">
+    android:layout_marginBottom="@dimen/space_16">
 
     <ImageView
         android:id="@+id/photoImage"
         android:layout_width="@dimen/photo_image_size"
         android:layout_height="@dimen/photo_image_size"
         android:adjustViewBounds="true"
-        android:contentDescription="@string/detail_image_description"
+        android:contentDescription="@string/photo_description"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -24,7 +24,7 @@
         style="@style/PhotoTitle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/photo_margin_title"
+        android:layout_margin="@dimen/space_8"
         android:ellipsize="end"
         android:maxLines="2"
         app:layout_constraintBottom_toBottomOf="@+id/photoImage"

@@ -1,0 +1,49 @@
+<resources>
+
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorSecondary">@color/colorSecondary</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="AppToolbar" parent="AppTheme">
+        <item name="android:background">@color/toolbar_background</item>
+        <item name="titleTextColor">@color/toolbar_text</item>
+    </style>
+
+    <style name="ProgressBar" parent="@style/Widget.MaterialProgressBar.ProgressBar.Horizontal.NoPadding">
+        <item name="android:visibility">gone</item>
+        <item name="android:indeterminate">true</item>
+        <item name="mpb_useIntrinsicPadding">false</item>
+        <item name="mpb_progressStyle">horizontal</item>
+        <item name="mpb_progressTint">@color/progressbar_tint</item>
+    </style>
+
+    <style name="AlbumHolder" parent="AppTheme">
+        <item name="cardBackgroundColor">@color/album_item_background</item>
+        <item name="cardCornerRadius">@dimen/album_corner_holder</item>
+    </style>
+
+    <style name="AlbumTitle" parent="AppTheme">
+        <item name="android:background">@drawable/viewholder_ripple</item>
+        <item name="android:textColor">@color/album_item_title</item>
+        <item name="android:textSize">@dimen/album_text_size</item>
+    </style>
+
+    <style name="AlbumPrompt" parent="AppTheme">
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/album_prompt</item>
+        <item name="android:textSize">@dimen/album_text_size</item>
+    </style>
+
+    <style name="PhotoPage" parent="AppTheme">
+        <item name="android:background">@color/photo_item_background</item>
+    </style>
+
+    <style name="PhotoTitle" parent="AppTheme">
+        <item name="android:textSize">@dimen/photo_text_size</item>
+        <item name="android:textColor">@color/photo_item_title</item>
+    </style>
+
+</resources>
