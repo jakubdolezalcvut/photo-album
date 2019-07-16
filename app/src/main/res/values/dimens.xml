@@ -7,6 +7,7 @@
     <dimen name="space_8">8dp</dimen>
     <dimen name="space_16">16dp</dimen>
     <dimen name="space_24">24dp</dimen>
+    <dimen name="space_32">32dp</dimen>
 
     <!-- List Page -->
     <dimen name="album_corner_holder">4dp</dimen>

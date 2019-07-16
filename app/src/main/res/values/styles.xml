@@ -46,4 +46,8 @@
         <item name="android:textColor">@color/photo_item_title</item>
     </style>
 
+    <style name="UploadPage" parent="AppTheme">
+        <item name="android:background">@color/blue</item>
+    </style>
+
 </resources>

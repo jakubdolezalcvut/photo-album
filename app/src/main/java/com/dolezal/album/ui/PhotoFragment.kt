@@ -50,13 +50,8 @@ class PhotoFragment : Fragment() {
             progressBar = photoProgressBar,
             emptyMessage = photoEmptyMessage
         )
-        if (resources.configuration.orientation == Configuration.ORIENTATION_LANDSCAPE) {
-            photoToolbar.visibility = View.GONE
-        } else {
-            photoToolbar.setNavigationOnClickListener { _ ->
-                fragmentManager?.popBackStackImmediate()
-            }
-            photoToolbar.navigationIcon = ContextCompat.getDrawable(requireContext(), R.drawable.ic_close)
+        photoToolbar.setupForNavigation {
+            fragmentManager?.popBackStackImmediate()
         }
     }
 

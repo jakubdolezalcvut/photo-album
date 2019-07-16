@@ -1,6 +1,70 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/UploadPage"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-</LinearLayout>
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/uploadToolbar"
+        style="@style/AppToolbar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:title="@string/upload_page_title" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/uploadStartGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="@dimen/space_32" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/uploadEndGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="@dimen/space_32" />
+
+    <EditText
+        android:id="@+id/uploadTitleEditText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/space_32"
+        android:ems="32"
+        android:hint="@string/upload_title_hint"
+        android:imeOptions="actionSend"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="@+id/uploadEndGuideline"
+        app:layout_constraintStart_toStartOf="@+id/uploadStartGuideline"
+        app:layout_constraintTop_toBottomOf="@+id/uploadToolbar"
+        tools:text="Photo title" />
+
+    <Spinner
+        android:id="@+id/uploadAlbumSpinner"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/space_32"
+        app:layout_constraintEnd_toEndOf="@+id/uploadEndGuideline"
+        app:layout_constraintStart_toStartOf="@+id/uploadStartGuideline"
+        app:layout_constraintTop_toBottomOf="@+id/uploadTitleEditText" />
+
+    <Button
+        android:id="@+id/uploadBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/space_32"
+        android:minWidth="200dp"
+        android:text="@string/upload_upload_btn"
+        app:layout_constraintEnd_toEndOf="@+id/uploadEndGuideline"
+        app:layout_constraintStart_toStartOf="@+id/uploadStartGuideline"
+        app:layout_constraintTop_toBottomOf="@+id/uploadAlbumSpinner" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
