@@ -23,4 +23,17 @@ data class Album(
     val userId: Long,
     val id: Long,
     val title: String
-) : Parcelable
+) : Parcelable {
+
+    override fun toString(): String {
+        return title
+    }
+
+    companion object {
+        val NONE = Album(
+            userId = -1,
+            id = -1,
+            title = "None"
+        )
+    }
+}
