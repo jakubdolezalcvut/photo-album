@@ -23,11 +23,12 @@
     </style>
 
     <style name="AppTheme.ProgressBar" parent="@style/Widget.MaterialProgressBar.ProgressBar.Horizontal.NoPadding">
-        <item name="android:visibility">gone</item>
+        <item name="android:visibility">visible</item>
+        <item name="android:elevation">4dp</item>
         <item name="android:indeterminate">true</item>
         <item name="mpb_useIntrinsicPadding">false</item>
         <item name="mpb_progressStyle">horizontal</item>
-        <item name="mpb_progressTint">@color/colorSecondaryVariant</item>
+        <item name="mpb_indeterminateTint">@color/colorSecondaryVariant</item>
     </style>
 
     <style name="AppTheme.EmptyPrompt" parent="TextAppearance.MaterialComponents.Headline6">
