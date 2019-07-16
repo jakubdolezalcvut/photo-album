@@ -1,38 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <!-- Basic colors -->
-    <color name="purple">#660066</color>
-    <color name="purple_dark">#330033</color>
-    <color name="purple_light">#CE94CE</color>
+    <!-- Material Colors -->
+    <color name="colorPrimary">#1976d2</color>
+    <color name="colorPrimaryVariant">#63a4ff</color>
+    <color name="colorOnPrimary">#ffffff</color>
 
-    <color name="white">#FFFFFF</color>
-    <color name="gray">#242424</color>
+    <color name="colorSecondary">#ec407a</color>
+    <color name="colorSecondaryVariant">#ff77a9</color>
+    <color name="colorOnSecondary">#ffffff</color>
+
+    <color name="colorError">#b00020</color>
+    <color name="colorOnError">#ffffff</color>
+
+    <color name="colorSurface">#ffffff</color>
+    <color name="colorOnSurface">#212121</color>
+    <color name="colorBackground">#ffffff</color>
+    <color name="colorOnBackground">#212121</color>
+
+    <!-- Additional Colors -->
     <color name="blue">#DCEBFD</color>
-
-    <!-- AppTheme -->
-    <color name="colorPrimary">@color/purple</color>
-    <color name="colorPrimaryDark">@color/purple_dark</color>
-    <color name="colorSecondary">@color/purple_light</color>
-    <color name="colorAccent">@color/blue</color>
-
-    <!-- Fragment Header -->
-    <color name="toolbar_background">@color/purple</color>
-    <color name="toolbar_text">@color/white</color>
-    <color name="progressbar_tint">@color/purple_light</color>
-
-    <!-- Loading -->
-    <color name="loading_start">#00FFFFFF</color>
-    <color name="loading_end">@color/purple</color>
-
-    <!-- List Fragment -->
-    <color name="album_prompt">@color/purple</color>
-    <color name="album_item_title">@color/gray</color>
-    <color name="album_item_background">@color/blue</color>
-    <color name="album_item_highlight">@color/purple_light</color>
-
-    <!-- Detail Fragment -->
-    <color name="photo_item_background">@color/blue</color>
-    <color name="photo_item_title">@color/gray</color>
 
 </resources>

@@ -3,6 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/albumCoordinator"
+    style="@style/AppTheme.AlbumPage"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -12,7 +13,7 @@
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/albumToolbar"
-            style="@style/AppToolbar"
+            style="@style/AppTheme.AppToolbar"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             app:layout_constraintEnd_toEndOf="parent"
@@ -24,7 +25,7 @@
 
         <me.zhanghai.android.materialprogressbar.MaterialProgressBar
             android:id="@+id/albumProgressBar"
-            style="@style/ProgressBar"
+            style="@style/AppTheme.ProgressBar"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             app:layout_constraintBottom_toBottomOf="@+id/albumToolbar"
@@ -45,13 +46,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:clipToPadding="false"
-                android:padding="@dimen/space_8"/>
+                android:padding="@dimen/space_8" />
 
         </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
         <TextView
             android:id="@+id/albumEmptyMessage"
-            style="@style/AlbumPrompt"
+            style="@style/AppTheme.EmptyPrompt"
             android:layout_width="@dimen/album_message_width"
             android:layout_height="wrap_content"
             android:text="@string/network_loading_message"

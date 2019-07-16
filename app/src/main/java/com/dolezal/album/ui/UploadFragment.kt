@@ -53,7 +53,7 @@ class UploadFragment : Fragment() {
                 title = uploadTitleEditText.text.toString(),
                 album = uploadAlbumSpinner.selectedItem as? Album,
                 onTitleError = { error ->
-                    uploadTitleEditText.error = error
+                    uploadTitleTextInput.error = error
                 },
                 onAlbumError = { error ->
                     val errorView = uploadAlbumSpinner.selectedView as TextView

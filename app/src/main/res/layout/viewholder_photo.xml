@@ -21,12 +21,10 @@
 
     <TextView
         android:id="@+id/photoTitle"
-        style="@style/PhotoTitle"
+        style="@style/AppTheme.PhotoTitle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/space_8"
-        android:ellipsize="end"
-        android:maxLines="2"
         app:layout_constraintBottom_toBottomOf="@+id/photoImage"
         app:layout_constraintEnd_toEndOf="@+id/photoImage"
         app:layout_constraintStart_toStartOf="@+id/photoImage"

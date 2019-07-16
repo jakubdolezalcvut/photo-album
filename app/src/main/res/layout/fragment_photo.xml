@@ -3,18 +3,19 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/photoCoordinator"
-    style="@style/PhotoPage"
+    style="@style/AppTheme.PhotoPage"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:clickable="true">
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
+        style="@style/Widget.MaterialComponents.FloatingActionButton"
         android:id="@+id/photoFloatingActionButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="end|bottom"
         android:layout_margin="@dimen/space_16"
-        android:src="@drawable/ic_plus" />
+        app:srcCompat="@drawable/ic_plus" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -22,7 +23,7 @@
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/photoToolbar"
-            style="@style/AppToolbar"
+            style="@style/AppTheme.AppToolbar"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             app:layout_constraintEnd_toEndOf="parent"
@@ -34,7 +35,7 @@
 
         <me.zhanghai.android.materialprogressbar.MaterialProgressBar
             android:id="@+id/photoProgressBar"
-            style="@style/ProgressBar"
+            style="@style/AppTheme.ProgressBar"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             app:layout_constraintBottom_toBottomOf="@+id/photoToolbar"
@@ -61,7 +62,7 @@
 
         <TextView
             android:id="@+id/photoEmptyMessage"
-            style="@style/AlbumPrompt"
+            style="@style/AppTheme.EmptyPrompt"
             android:layout_width="@dimen/album_message_width"
             android:layout_height="wrap_content"
             android:text="@string/network_loading_message"

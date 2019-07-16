@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    style="@style/UploadPage"
+    style="@style/AppTheme.UploadPage"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/uploadToolbar"
-        style="@style/AppToolbar"
+        style="@style/AppTheme.AppToolbar"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
@@ -33,36 +32,40 @@
         android:orientation="vertical"
         app:layout_constraintGuide_end="@dimen/space_32" />
 
-    <EditText
-        android:id="@+id/uploadTitleEditText"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/uploadTitleTextInput"
+        style="@style/AppTheme.UploadTitle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/space_32"
-        android:ems="32"
-        android:hint="@string/upload_title_hint"
-        android:imeOptions="actionSend"
-        android:inputType="text"
         app:layout_constraintEnd_toEndOf="@+id/uploadEndGuideline"
         app:layout_constraintStart_toStartOf="@+id/uploadStartGuideline"
         app:layout_constraintTop_toBottomOf="@+id/uploadToolbar"
-        tools:text="Photo title" />
+        tools:text="Photo title">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/uploadTitleEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </com.google.android.material.textfield.TextInputLayout>
 
     <Spinner
         android:id="@+id/uploadAlbumSpinner"
+        style="@style/AppTheme.UploadAlbum"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/space_32"
         app:layout_constraintEnd_toEndOf="@+id/uploadEndGuideline"
         app:layout_constraintStart_toStartOf="@+id/uploadStartGuideline"
-        app:layout_constraintTop_toBottomOf="@+id/uploadTitleEditText" />
+        app:layout_constraintTop_toBottomOf="@+id/uploadTitleTextInput" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/uploadBtn"
+        style="@style/AppTheme.UploadBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/space_32"
-        android:minWidth="200dp"
-        android:text="@string/upload_upload_btn"
         app:layout_constraintEnd_toEndOf="@+id/uploadEndGuideline"
         app:layout_constraintStart_toStartOf="@+id/uploadStartGuideline"
         app:layout_constraintTop_toBottomOf="@+id/uploadAlbumSpinner" />

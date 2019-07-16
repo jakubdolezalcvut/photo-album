@@ -5,8 +5,8 @@
     <string name="photo_page_title">Photos</string>
     <string name="photo_description">A photo</string>
 
-    <string name="upload_page_title">Upload new Photo</string>
-    <string name="upload_title_hint">Enter a title</string>
+    <string name="upload_page_title">Upload New Photo</string>
+    <string name="upload_title_hint">Photo title</string>
     <string name="upload_upload_btn">Upload</string>
     <string name="upload_validation_error_title">Please, type in some title</string>
     <string name="upload_validation_error_album">Please, select an album</string>

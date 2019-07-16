@@ -58,7 +58,7 @@ dependencies {
     implementation("androidx.lifecycle:lifecycle-viewmodel:2.0.0")
     implementation("androidx.lifecycle:lifecycle-livedata:2.0.0")
     implementation("androidx.lifecycle:lifecycle-extensions:2.0.0")
-    implementation("com.google.android.material:material:1.0.0")
+    implementation("com.google.android.material:material:1.1.0-alpha08")
 
     // UI LIBRARIES
     implementation("com.google.android:flexbox:1.1.0")

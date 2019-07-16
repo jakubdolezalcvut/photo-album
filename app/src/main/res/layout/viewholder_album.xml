@@ -2,14 +2,14 @@
 <androidx.cardview.widget.CardView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    style="@style/AlbumHolder"
+    style="@style/AppTheme.AlbumHolder"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginBottom="@dimen/space_8">
 
     <TextView
         android:id="@+id/albumTitle"
-        style="@style/AlbumTitle"
+        style="@style/AppTheme.AlbumTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="@dimen/space_24"
