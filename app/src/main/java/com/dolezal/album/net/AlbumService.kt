@@ -4,6 +4,7 @@ import com.dolezal.album.data.AlbumDTO
 import com.dolezal.album.data.PhotoDTO
 import io.reactivex.Single
 import retrofit2.http.GET
+import retrofit2.http.POST
 import retrofit2.http.Query
 
 interface AlbumService {
@@ -13,4 +14,10 @@ interface AlbumService {
 
     @GET("photos")
     fun getPhotos(@Query("albumId") albumId: Long): Single<List<PhotoDTO>>
+
+    @POST("photos")
+    fun uploadPhoto(
+        @Query("title") title: String,
+        @Query("albumId") albumId: Long
+    ): Single<String>
 }

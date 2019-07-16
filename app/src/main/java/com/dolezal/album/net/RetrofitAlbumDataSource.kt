@@ -5,11 +5,11 @@ import io.reactivex.Single
 import io.reactivex.schedulers.Schedulers
 
 class RetrofitAlbumDataSource(
-    private val itemService: AlbumService
+    private val albumService: AlbumService
 ) : AlbumDataSource {
 
     override fun getAlbums(): Single<List<Album>> {
-        return itemService.getAlbums()
+        return albumService.getAlbums()
             .subscribeOn(Schedulers.io())
             .retry(RETRY_COUNT)
             .map { dtoList ->
