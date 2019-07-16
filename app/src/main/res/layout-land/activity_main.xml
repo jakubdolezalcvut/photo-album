@@ -17,9 +17,8 @@
         app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
         app:title="@string/app_name" />
 
-    <fragment
-        android:id="@+id/albumFragment"
-        android:name="com.dolezal.album.ui.AlbumFragment"
+    <FrameLayout
+        android:id="@+id/albumFragmentFrame"
         android:layout_width="@dimen/album_landscape_width"
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -27,12 +26,12 @@
         app:layout_constraintTop_toBottomOf="@+id/landscapeToolbar" />
 
     <FrameLayout
-        android:id="@+id/photoFrame"
+        android:id="@+id/photoFragmentFrame"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/albumFragment"
+        app:layout_constraintStart_toEndOf="@+id/albumFragmentFrame"
         app:layout_constraintTop_toBottomOf="@+id/landscapeToolbar" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

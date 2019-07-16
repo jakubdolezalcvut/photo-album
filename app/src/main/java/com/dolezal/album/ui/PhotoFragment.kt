@@ -71,7 +71,7 @@ class PhotoFragment : Fragment() {
         }
         photoFloatingActionButton.setOnClickListener { _ ->
             requireFragmentManager().beginTransaction()
-                .add(R.id.photoFrame, UploadFragment(), UploadFragment.TAG)
+                .add(R.id.photoFragmentFrame, UploadFragment(), UploadFragment.TAG)
                 .addToBackStack(null)
                 .commit()
         }

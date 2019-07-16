@@ -72,10 +72,14 @@ class AlbumFragment : Fragment() {
             requireFragmentManager().apply {
                 popBackStack()
                 beginTransaction()
-                    .replace(R.id.photoFrame, fragment, PhotoFragment.TAG)
+                    .replace(R.id.photoFragmentFrame, fragment, PhotoFragment.TAG)
                     .addToBackStack(null)
                     .commit()
             }
         }
+    }
+
+    companion object {
+        const val TAG = "album-fragment"
     }
 }
