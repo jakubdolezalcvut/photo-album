@@ -6,7 +6,7 @@
     android:layout_height="match_parent">
 
     <androidx.appcompat.widget.Toolbar
-        android:id="@+id/landscape_toolbar"
+        android:id="@+id/landscapeToolbar"
         style="@style/AppToolbar"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -18,21 +18,21 @@
         app:title="@string/app_name" />
 
     <fragment
-        android:id="@+id/fragment_list"
-        class="com.dolezal.album.ui.AlbumFragment"
+        android:id="@+id/albumFragment"
+        android:name="com.dolezal.album.ui.AlbumFragment"
         android:layout_width="@dimen/album_landscape_width"
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/landscape_toolbar" />
+        app:layout_constraintTop_toBottomOf="@+id/landscapeToolbar" />
 
     <FrameLayout
-        android:id="@+id/frame_detail"
+        android:id="@+id/photoFrame"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/fragment_list"
-        app:layout_constraintTop_toBottomOf="@+id/landscape_toolbar" />
+        app:layout_constraintStart_toEndOf="@+id/albumFragment"
+        app:layout_constraintTop_toBottomOf="@+id/landscapeToolbar" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
