@@ -1,6 +1,7 @@
 package com.dolezal.album.net
 
 import com.dolezal.album.data.Photo
+import com.dolezal.album.data.Upload
 import io.reactivex.Single
 import io.reactivex.schedulers.Schedulers
 
@@ -11,19 +12,16 @@ class RetrofitPhotoDataSource(
     override fun getPhotos(albumId: Long): Single<List<Photo>> {
         return albumService.getPhotos(albumId)
             .subscribeOn(Schedulers.io())
-            .retry(RETRY_COUNT)
             .map { dtoList ->
                 dtoList.map { dto -> dto.toDomain() }
             }
     }
 
-    override fun uploadPhoto(title: String, albumId: Long): Single<String> {
+    override fun uploadPhoto(title: String, albumId: Long): Single<Upload> {
         return albumService.uploadPhoto(title, albumId)
             .subscribeOn(Schedulers.io())
-            .retry(RETRY_COUNT)
-    }
-
-    companion object {
-        private const val RETRY_COUNT = 2L
+            .map { dto ->
+                dto.toDomain()
+            }
     }
 }

@@ -11,13 +11,8 @@ class RetrofitAlbumDataSource(
     override fun getAlbums(): Single<List<Album>> {
         return albumService.getAlbums()
             .subscribeOn(Schedulers.io())
-            .retry(RETRY_COUNT)
             .map { dtoList ->
                 dtoList.map { dto -> dto.toDomain() }
             }
-    }
-
-    companion object {
-        private const val RETRY_COUNT = 2L
     }
 }

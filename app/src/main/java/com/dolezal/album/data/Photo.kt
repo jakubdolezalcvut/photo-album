@@ -1,8 +1,6 @@
 package com.dolezal.album.data
 
-import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
-import kotlinx.android.parcel.Parcelize
 
 data class PhotoDTO(
     @SerializedName("id") val id: Long,
@@ -20,10 +18,9 @@ data class PhotoDTO(
     }
 }
 
-@Parcelize
 data class Photo(
     val id: Long,
     val title: String,
     val url: String,
     val thumbnailUrl: String
-) : Parcelable
+)

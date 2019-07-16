@@ -38,7 +38,7 @@
     </style>
 
     <style name="PhotoPage" parent="AppTheme">
-        <item name="android:background">@color/photo_item_background</item>
+        <item name="android:background">@color/blue</item>
     </style>
 
     <style name="PhotoTitle" parent="AppTheme">

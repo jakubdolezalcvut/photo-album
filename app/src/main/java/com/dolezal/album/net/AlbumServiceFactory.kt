@@ -11,7 +11,7 @@ object AlbumServiceFactory {
 
     fun create(baseUrl: String): AlbumService {
         val loggingInterceptor = HttpLoggingInterceptor().also { interceptor ->
-            interceptor.level = HttpLoggingInterceptor.Level.HEADERS
+            interceptor.level = HttpLoggingInterceptor.Level.BODY
         }
         val client = OkHttpClient.Builder()
             .addInterceptor(loggingInterceptor)

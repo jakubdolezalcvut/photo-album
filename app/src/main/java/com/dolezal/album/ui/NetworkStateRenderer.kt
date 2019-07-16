@@ -5,7 +5,10 @@ import android.view.View
 import android.widget.TextView
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.dolezal.album.R
+import com.dolezal.album.data.NetworkLoading
 import com.dolezal.album.data.NetworkState
+import com.dolezal.album.data.NetworkSuccess
+import com.dolezal.album.getDescription
 import com.google.android.material.snackbar.Snackbar
 import me.zhanghai.android.materialprogressbar.MaterialProgressBar
 
@@ -21,8 +24,8 @@ class NetworkStateRenderer(
         Log.i(TAG, state.toString())
 
         when (state) {
-            NetworkState.Loading -> onLoading()
-            NetworkState.Success -> onSuccess()
+            NetworkLoading -> onLoading()
+            NetworkSuccess -> onSuccess()
             is NetworkState.Error -> onError(state.throwable)
         }
     }
@@ -48,8 +51,7 @@ class NetworkStateRenderer(
             emptyMessage.setText(R.string.network_empty_message)
             emptyMessage.visibility = View.VISIBLE
         }
-        val message = throwable.message ?: throwable::class.java.simpleName
-        Snackbar.make(containerView, message, Snackbar.LENGTH_LONG).show()
+        Snackbar.make(containerView, throwable.getDescription(), Snackbar.LENGTH_LONG).show()
     }
 
     companion object {

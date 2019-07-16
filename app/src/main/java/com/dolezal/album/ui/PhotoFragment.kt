@@ -1,12 +1,10 @@
 package com.dolezal.album.ui
 
-import android.content.res.Configuration
 import android.os.Bundle
 import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.transition.Slide
@@ -32,7 +30,7 @@ class PhotoFragment : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         super.onCreateView(inflater, container, savedInstanceState)
         return inflater.inflate(R.layout.fragment_photo, container, false)
     }
@@ -72,7 +70,10 @@ class PhotoFragment : Fragment() {
             }
         }
         photoFloatingActionButton.setOnClickListener { _ ->
-
+            requireFragmentManager().beginTransaction()
+                .add(R.id.photoFrame, UploadFragment(), UploadFragment.TAG)
+                .addToBackStack(null)
+                .commit()
         }
 
         photoViewModel = getViewModel { scope ->
