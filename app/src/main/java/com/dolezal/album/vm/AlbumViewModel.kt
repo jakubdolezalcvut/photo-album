@@ -22,19 +22,21 @@ class AlbumViewModel @RestrictTo(RestrictTo.Scope.TESTS) constructor(
     val networkState: LiveData<NetworkState> = _networkState
     val albums: LiveData<List<Album>> = _albums
 
-    fun load() {
-        _networkState.postValue(NetworkLoading)
+    fun load(force: Boolean) {
+        if (force || albums.value == null) {
+            _networkState.postValue(NetworkLoading)
 
-        albumDataSource.getAlbums().subscribeBy(
-            onSuccess = { albumList ->
-                _networkState.postValue(NetworkSuccess)
-                _albums.postValue(albumList)
-            },
-            onError = { throwable ->
-                _networkState.postValue(NetworkError(throwable))
+            albumDataSource.getAlbums().subscribeBy(
+                onSuccess = { albumList ->
+                    _networkState.postValue(NetworkSuccess)
+                    _albums.postValue(albumList)
+                },
+                onError = { throwable ->
+                    _networkState.postValue(NetworkError(throwable))
+                }
+            ).also { disposable ->
+                compositeDisposable.add(disposable)
             }
-        ).also { disposable ->
-            compositeDisposable.add(disposable)
         }
     }
 

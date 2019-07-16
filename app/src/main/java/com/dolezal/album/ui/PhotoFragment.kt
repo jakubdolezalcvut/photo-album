@@ -65,7 +65,7 @@ class PhotoFragment : Fragment() {
         val photoAdapter = PhotoAdapter()
 
         photoRefreshLayout.setOnRefreshListener {
-            load()
+            load(force = true)
         }
         photoRecyclerView.apply {
             adapter = photoAdapter
@@ -90,12 +90,12 @@ class PhotoFragment : Fragment() {
                 networkStateRenderer.render(state)
             })
         }
-        load()
+        load(force = false)
     }
 
-    private fun load() {
+    private fun load(force: Boolean) {
         album?.let { album ->
-            photoViewModel.load(album.id)
+            photoViewModel.load(force, album.id)
         }
     }
 

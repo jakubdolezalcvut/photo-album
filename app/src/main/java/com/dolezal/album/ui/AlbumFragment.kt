@@ -45,7 +45,7 @@ class AlbumFragment : Fragment() {
         val albumAdapter = getAdapter()
 
         albumRefreshLayout.setOnRefreshListener {
-            albumViewModel.load()
+            albumViewModel.load(force = true)
         }
         albumRecyclerView.apply {
             adapter = albumAdapter
@@ -61,7 +61,7 @@ class AlbumFragment : Fragment() {
             networkState.observe(viewLifecycleOwner, Observer { state ->
                 networkStateRenderer.render(state)
             })
-            load()
+            load(force = false)
         }
     }
 
@@ -72,7 +72,7 @@ class AlbumFragment : Fragment() {
             requireFragmentManager().apply {
                 popBackStack()
                 beginTransaction()
-                    .replace(R.id.frame_detail, fragment, PhotoFragment.TAG)
+                    .replace(R.id.photoFrame, fragment, PhotoFragment.TAG)
                     .addToBackStack(null)
                     .commit()
             }

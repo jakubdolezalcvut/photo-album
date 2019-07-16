@@ -22,22 +22,24 @@ class PhotoViewModel @RestrictTo(RestrictTo.Scope.TESTS) constructor(
     val networkState: LiveData<NetworkState> = _networkState
     val photos: LiveData<List<Photo>> = _photos
 
-    fun load(albumId: Long) {
-        _networkState.postValue(NetworkLoading)
+    fun load(force: Boolean, albumId: Long) {
+        if (force || photos.value == null) {
+            _networkState.postValue(NetworkLoading)
 
-        photoDataSource.getPhotos(albumId).subscribeBy(
-            onSuccess = { photoList ->
-                val sortedList = photoList.sortedBy { photo ->
-                    photo.title.length
+            photoDataSource.getPhotos(albumId).subscribeBy(
+                onSuccess = { photoList ->
+                    val sortedList = photoList.sortedBy { photo ->
+                        photo.title.length
+                    }
+                    _networkState.postValue(NetworkSuccess)
+                    _photos.postValue(sortedList)
+                },
+                onError = { throwable ->
+                    _networkState.postValue(NetworkError(throwable))
                 }
-                _networkState.postValue(NetworkSuccess)
-                _photos.postValue(sortedList)
-            },
-            onError = { throwable ->
-                _networkState.postValue(NetworkError(throwable))
+            ).also { disposable ->
+                compositeDisposable.add(disposable)
             }
-        ).also { disposable ->
-            compositeDisposable.add(disposable)
         }
     }
 
