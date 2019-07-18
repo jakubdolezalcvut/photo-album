@@ -1,4 +1,4 @@
-# Infinite Scrolling
+# Photo Album
 
 My implementation of albums and photos in RecyclerView written in Kotlin. The most significiant dependencies are enumerated below:
 
